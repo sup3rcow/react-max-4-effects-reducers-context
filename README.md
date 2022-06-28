@@ -1,1 +1,0 @@
-# react-max-4-effects-reducers-context
