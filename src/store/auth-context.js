@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 
+// !!!!!!!!!!!
+// context je ok ako se nesto ne mijenja tako cesto, ako se ipak mijenja cesto, a potrebno je da je na nivou citave aplikacije, za to se koristi redux lib
+// !!!!!!!!!!!
+
 const AuthContext = React.createContext({
   isLoggedIn: false,
   onLogout: () => {},
