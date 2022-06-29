@@ -13,6 +13,7 @@ function App() {
       setIsLoggedIn(true);
     }
   }, []); // ako nema u [] niti jedan dependency, okinut ce se samo jednom kad se app pokrene
+  // ako nema [] okida se vsaki put kad se komponenta izvrsava
 
   const loginHandler = (email, password) => {
     // We should of course check email and password
