@@ -4,8 +4,6 @@ import Card from "../UI/Card/Card";
 import classes from "./Login.module.css";
 import Button from "../UI/Button/Button";
 
-let timer = null;
-
 const Login = (props) => {
   const [enteredEmail, setEnteredEmail] = useState("");
   const [emailIsValid, setEmailIsValid] = useState(false);
@@ -14,7 +12,7 @@ const Login = (props) => {
   const [formIsValid, setFormIsValid] = useState(false);
 
   useEffect(() => {
-    timer = setTimeout(() => {
+    const identifier = setTimeout(() => {
       console.log("check for validity");
       setFormIsValid(
         enteredEmail.includes("@") && enteredPassword.trim().length > 6
@@ -22,7 +20,7 @@ const Login = (props) => {
     }, 500);
 
     // cleanup function, okida se prije 2.3.4. itd izvrsavanja, ne okida se prije prvok ogidanja useEffect
-    return () => clearTimeout(timer);
+    return () => clearTimeout(identifier);
   }, [enteredEmail, enteredPassword]);
 
   const emailChangeHandler = (event) => {
